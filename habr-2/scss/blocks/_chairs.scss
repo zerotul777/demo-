@@ -1,0 +1,43 @@
+.chairs {
+	display: none;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	margin: 0 0 120px;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		margin: 0 0 40px;
+	}
+
+	&__title {
+		margin: 0;
+		font-weight: 400;
+		font-size: 56px;
+		line-height: 56px;
+		letter-spacing: -0.04em;
+	}
+
+	&__inner {
+		display: flex;
+		gap: 50px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+	}
+
+	&__item {
+		// width: 320px;
+		width: calc(25% - 40px * 3 / 4);
+	}
+}

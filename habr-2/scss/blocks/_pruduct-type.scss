@@ -1,0 +1,26 @@
+.pruduct-type {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+	&__link {
+    border: none;
+    background-color: $color-whisper;
+    border-radius: 60px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-green-white;
+    }
+	}
+}

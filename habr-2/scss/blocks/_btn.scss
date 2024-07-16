@@ -1,0 +1,41 @@
+.btn {
+	max-width: 260px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	background-color: transparent;
+	border: 1px solid $color-swiss-coffee;
+	cursor: $cursor-custom-black;
+	padding: 13px;
+	font-family: $ff-mulish;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	color: $color-bokara-grey;
+	outline: none;
+	transition: background-color 0.2s ease;
+
+	&:hover,
+	&:focus-visible {
+		background-color: $color-green-white;
+	}
+
+	&--secondary {
+		width: 240px;
+		font-size: 14px;
+		line-height: 18px;
+		padding: 20px;
+		background-color: $color-bokara-grey;
+		border-color: $color-bokara-grey;
+		color: $color-white;
+		cursor: pointer;
+
+		&:hover,
+		&:focus-visible {
+			background-color: $color-green-white;
+      color: $color-bokara-grey;
+		}
+	}
+}

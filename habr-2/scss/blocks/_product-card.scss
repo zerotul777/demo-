@@ -1,0 +1,268 @@
+.product-card {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	$root: &;
+
+	&:focus-within #{$root}__overlay, 
+  &:hover #{$root}__overlay {
+		opacity: 1;
+	}
+
+	&__image-link {
+		position: relative;
+		display: flex;
+		outline: none;
+		cursor: $cursor-custom-white;
+
+    // возможно ховер должен быть только на картинке, а не на всю карточку, но это не точно
+    // &:hover .product-card__overlay {
+    //   opacity: 1;
+    // } 
+	}
+
+	&__img {
+		width: 100%;
+		flex-shrink: 0;
+	}
+
+	&__badge {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.04em;
+		padding: 10px 15px;
+		background-color: $color-hint-of-red;
+		border-radius: 60px;
+		z-index: 1;
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $color-black-40;
+		text-transform: uppercase;
+		color: $color-white;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 16px;
+		letter-spacing: 0.04em;
+		opacity: 0;
+		transition: opacity 0.2s ease-in;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__header {
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__credit-logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 6px;
+		background-color: $color-bokara-grey;
+		border-radius: 4px;
+		outline: none;
+		cursor: $cursor-custom-black;
+		transition: box-shadow 0.2s ease, background-color 0.2s ease;
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: 2px 5px 5px 0px $color-black-20;
+			background-color: $color-kilimanjaro;
+		}
+
+		&-icon {
+			width: 56px;
+			height: 8px;
+			flex-shrink: 0;
+		}
+	}
+
+	&__color {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		gap: 5px;
+
+		&-item {
+			display: flex;
+		}
+
+		&-btn {
+			padding: 0;
+			border: none;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: $color-black;
+			outline: none;
+			cursor: $cursor-custom-black;
+			transition: box-shadow 0.2s ease;
+
+			&:hover,
+			&:focus-visible {
+				box-shadow: 2px 5px 5px 0px $color-black-20;
+			}
+
+			&--fair-pink {
+				background-color: $color-fair-pink;
+			}
+			&--woodland {
+				background-color: $color-woodland;
+			}
+			&--submarine {
+				background-color: $color-submarine;
+			}
+      &--sambuca {
+        background-color: $color-sambuca;
+      }
+      &--equator {
+        background-color: $color-equator;
+      }
+		}
+	}
+
+	&__name {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		align-items: flex-start;
+	}
+
+	&__category {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.04em;
+		color: $color-cloudy;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 26px;
+		text-transform: uppercase;
+		outline: none;
+		transition: color 0.2s ease;
+		cursor: $cursor-custom-black;
+
+		&:hover,
+		&:focus-visible {
+			color: $color-finch;
+		}
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		&-current {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		&-old {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 18px;
+			text-decoration: line-through;
+			color: $color-cloudy;
+		}
+	}
+
+	&__footer {
+		margin: 10px 0 0;
+		display: flex;
+		align-items: center;
+		gap: 21px;
+	}
+
+	&__btn-like {
+		width: 28px;
+		height: 28px;
+		border: none;
+		background-color: transparent;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: $cursor-custom-black;
+		outline: none;
+		transition: color 0.2s ease;
+
+		&-icon {
+			width: 20px;
+			height: 20px;
+			flex-shrink: 0;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $color-moon-mist;
+		}
+	}
+
+	// size-xs
+	&--size-xs {
+		gap: 15px;
+	}
+
+	&--size-xs #{$root}__title {
+		text-transform: none;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	
+	&--size-xs #{$root}__content {
+		gap: 5px;
+	}
+
+	&--size-xs #{$root}__price {
+		gap: 5px;
+
+		&-current {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	
+		&-old {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	&--size-xs #{$root}__footer {
+		gap: 10px;
+	}
+
+	&--size-xs #{$root}__btn-like {
+		width: 24px;
+		height: 24px;
+		margin: 10px;
+	}
+}

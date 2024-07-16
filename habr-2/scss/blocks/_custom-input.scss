@@ -1,0 +1,42 @@
+.custom-input {
+	width: 100%;
+	display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+	&--error .custom-input__error {
+    display: block;
+	}
+
+	&--error .custom-input__field {
+    border-color: $color-red;
+	}
+
+	&__field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-locust;
+    padding: 0 0 9px;
+    font-family: $ff-mulish;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-bokara-grey;
+    outline: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-moon-mist;
+      color: $color-cloudy;
+    }
+	}
+
+	&__error {
+		display: none;
+    color: $color-red;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+	}
+}
