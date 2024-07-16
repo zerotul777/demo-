@@ -1,0 +1,68 @@
+.btn {
+	max-width: 420px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background-color: $color-bokara-grey;
+	border: 1px solid $color-bokara-grey;
+	cursor: pointer;
+	padding: 17px;
+	font-family: $ff-mulish;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	color: $color-white;
+	outline: none;
+	transition: color 0.2s ease, background-color 0.2s ease;
+
+	@media (max-width: 1279px) {
+		max-width: none;
+	}
+
+	@media (max-width: 768px) {
+		max-width: 620px;
+	}
+
+	@include vp-767 {
+		font-size: 12px;
+		line-height: 16px;
+		padding: 15px;
+	}
+
+	&:hover, 
+	&:focus-visible {
+		background-color: $color-green-white;
+		color: $color-bokara-grey;
+	}
+
+	&--active {
+		background-color: $color-green-white;
+		border-color: $color-green-white;
+		color: $color-bokara-grey;
+	}
+
+	&--active .btn__text {
+		display: none;
+	}
+
+	&--active .btn__success {
+		display: flex;
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+		flex-shrink: 0;
+
+		@include vp-767 {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__success {
+		display: none;
+	}
+}

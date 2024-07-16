@@ -1,0 +1,34 @@
+.socials {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 15px;
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		outline: none;
+
+		&:hover,
+		&:focus-visible {
+			color: $color-moon-mist;
+		}
+
+		&-icon {
+			width: 24px;
+			height: 24px;
+			flex-shrink: 0;
+			transition: color 0.2s ease;
+
+			@include vp-1023 {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}

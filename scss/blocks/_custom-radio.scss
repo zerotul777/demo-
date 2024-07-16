@@ -1,0 +1,88 @@
+.custom-radio {
+	display: flex;
+	position: relative;
+	$root: &;
+
+	&--bg-soft-peach #{$root}__label {
+		background-color: $color-soft-peach;
+
+		&::before {
+			border-color: $color-soft-peach;
+		}
+	}
+
+	&--bg-cloudy #{$root}__label {
+		background-color: $color-cloudy;
+
+		&::before {
+			border-color: $color-cloudy;
+		}
+	}
+
+	&--bg-mischka #{$root}__label {
+		background-color: $color-mischka;
+
+		&::before {
+			border-color: $color-mischka;
+		}
+	}
+
+	&--bg-bokara-grey #{$root}__label {
+		background-color: $color-bokara-grey;
+
+		&::before {
+			border-color: $color-bokara-grey;
+		}
+	}
+
+	&__field {
+		outline: none;
+
+		&:checked ~ #{$root}__label::before {
+			opacity: 1;
+			border-color: $color-bokara-grey;
+		}
+		
+		&:focus-visible ~ #{$root}__label::before {
+			opacity: 1;
+			box-shadow: 0 0 10px 1px $color-black-40;
+		}
+	}
+
+	&__label {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: $color-white;
+		cursor: pointer;
+		transition: box-shadow 0.2s ease;
+
+		@include vp-767 {
+			width: 32px;
+			height: 32px;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+
+		&::before {
+			content: '';
+			width: 48px;
+			height: 48px;
+			border: 1px solid $color-bokara-grey;
+			border-radius: 50%;
+			background-color: transparent;
+			position: absolute;
+			top: -4px;
+			left: -4px;
+			opacity: 0;
+			transition: box-shadow 0.2s ease, opacity 0.2s ease;
+
+			@include vp-767 {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}
